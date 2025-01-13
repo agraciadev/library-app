@@ -31,11 +31,20 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link {{ Request::routeIs('books.index') ? "active" : '' }}"
-                           aria-current="page" href="{{ route('books.index')  }}">Books</a>
+                           aria-current="page" href="{{ route('books.index')  }}">{{ __("messages.books")  }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::routeIs('contact') ? "active" : '' }}"
-                           href="{{ route('contact')  }}">Contact</a>
+                           href="{{ route('contact')  }}">{{ __("messages.contact")  }}</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ __('messages.language') }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('es') }}">Español</a></li>
+                            <li><a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('en') }}">English</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>

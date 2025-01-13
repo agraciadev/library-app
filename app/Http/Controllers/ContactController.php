@@ -18,6 +18,6 @@ class ContactController extends Controller
             'message' => 'required',
         ]);
 
-        return redirect()->route('contact')->with('success', 'Message send.');
+        return redirect()->route('contact')->with('success', __("messages.message_send"));
     }
 }

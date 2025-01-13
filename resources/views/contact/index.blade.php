@@ -10,13 +10,13 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
-                <h1>Contact</h1>
+                <h1>{{ __("messages.contact")  }}</h1>
             </div>
             <div class="col-md-12">
                 <form action="{{ route('contact') }}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label">{{ __("messages.email")  }}</label>
                         <input type="text"
                                id="email"
                                name="email"
@@ -29,7 +29,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
+                        <label for="message" class="form-label">{{ __("messages.message")  }}</label>
                         <textarea id="message"
                                   name="message"
                                   class="form-control @error('message') is-invalid @enderror"
@@ -40,7 +40,7 @@
                         </div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">{{ __("messages.submit")  }}</button>
                 </form>
             </div>
         </div>

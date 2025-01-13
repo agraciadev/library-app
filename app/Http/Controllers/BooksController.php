@@ -26,7 +26,7 @@ class BooksController extends Controller
         ]);
 
         Book::create($request->all());
-        return redirect()->route('books.index')->with('success', 'Book created successfully.');
+        return redirect()->route('books.index')->with('success', __('messages.book_created'));
     }
 
     public function edit(Book $book)
@@ -42,13 +42,13 @@ class BooksController extends Controller
         ]);
 
         $book->update($request->all());
-        return redirect()->route('books.index')->with('success', 'Book updated successfully.');
+        return redirect()->route('books.index')->with('success', __('messages.book_edited'));
     }
 
     public function destroy(Book $book)
     {
         $book->delete();
-        return redirect()->route('books.index')->with('success', 'Book deleted successfully.');
+        return redirect()->route('books.index')->with('success', __('messages.book_deleted'));
     }
 
 }

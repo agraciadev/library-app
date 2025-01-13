@@ -10,18 +10,18 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
-                <h1>Books</h1>
+                <h1>{{ __("messages.books")  }}</h1>
             </div>
             <div class="col-md-12">
-                <a class="btn btn-primary" href="{{ route('books.create')  }}">Create</a>
+                <a class="btn btn-primary" href="{{ route('books.create')  }}">{{ __("messages.create")  }}</a>
             </div>
             <div class="col-md-12">
                 <table class="table">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Author</th>
+                        <th scope="col">{{ __("messages.title")  }}</th>
+                        <th scope="col">{{ __("messages.author")  }}</th>
                         <th scope="col"></th>
                     </tr>
                     </thead>
@@ -32,14 +32,15 @@
                             <td>{{ $book->title }}</td>
                             <td>{{ $book->author }}</td>
                             <td>
-                                <a class="btn btn-primary" href="{{ route('books.edit', $book->id)  }}">Edit</a>
+                                <a class="btn btn-primary"
+                                   href="{{ route('books.edit', $book->id)  }}">{{ __("messages.edit")  }}</a>
                                 <form action="{{ route('books.destroy', $book->id) }}" method="POST"
                                       style="display:inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm"
-                                            onclick="return confirm('Are you sure you want to delete this post?');">
-                                        Delete
+                                    <button type="submit" class="btn btn-danger"
+                                            onclick="return confirm('{{ __("messages.confirm_delete_book")  }}');">
+                                        {{ __("messages.delete")  }}
                                     </button>
                                 </form>
                             </td>

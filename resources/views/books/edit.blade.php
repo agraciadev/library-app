@@ -4,14 +4,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <h1>Edit book</h1>
+                <h1>{{ __("messages.books_edit")  }}</h1>
             </div>
             <div class="col-md-12">
                 <form action="{{ route('books.update', $book->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
-                        <label for="title" class="form-label">Title</label>
+                        <label for="title" class="form-label">{{ __("messages.title")  }}</label>
                         <input type="text"
                                id="title"
                                name="title"
@@ -25,7 +25,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="author" class="form-label">Author</label>
+                        <label for="author" class="form-label">{{ __("messages.author")  }}</label>
                         <input type="text"
                                id="author"
                                name="author"
@@ -38,7 +38,7 @@
                         </div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">{{ __("messages.submit")  }}</button>
                 </form>
             </div>
         </div>
