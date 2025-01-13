@@ -10,3 +10,4 @@ Route::get('/', function () {
 
 Route::resource('/books', BooksController::class);
 Route::get('/contact', [ContactController::class, "index"])->name("contact");
+Route::post('/contact', [ContactController::class, "send"]);

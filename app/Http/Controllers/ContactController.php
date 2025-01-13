@@ -8,7 +8,16 @@ class ContactController extends Controller
 {
     public function index()
     {
-//        $posts = Post::all();
         return view('contact.index');
+    }
+
+    public function send(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
+
+        return redirect()->route('contact')->with('success', 'Message send.');
     }
 }
