@@ -30,12 +30,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link {{ Request::routeIs('books') ? "active" : '' }}"
-                           aria-current="page" href="{{ route('books')  }}">Libros</a>
+                        <a class="nav-link {{ Request::routeIs('books.index') ? "active" : '' }}"
+                           aria-current="page" href="{{ route('books.index')  }}">Books</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::routeIs('contact') ? "active" : '' }}"
-                           href="{{ route('contact')  }}">Contacto</a>
+                           href="{{ route('contact')  }}">Contact</a>
                     </li>
                 </ul>
             </div>
